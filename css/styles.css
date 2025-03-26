@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
     background-color: #f0ebf8;
 }
 
-h1, h2, h3, h4, h5 ,h6 {
+h1, h2, h3, h4, h5, h6 {
     color: #333;
 }
 
@@ -16,19 +17,26 @@ p, label {
     color: #444;
 }
 
-input {
+input, textarea {
     border: none;
     border-bottom: 1px solid #ccc;
-    padding: 10px 0px;
+    padding: 10px 0;
+    outline: none;
 }
 
-input[type="text"], input[type="number"] input[type="date"] input[type="file"], textarea {
-    width: 400px;
+input[type="text"], 
+input[type="number"], 
+input[type="date"], 
+input[type="file"], 
+textarea {
+    width: 100%;
+    max-width: 400px;
 }
 
 textarea {
-  padding: 10px 5px;  
-
+    padding: 10px 5px;  
+    resize: vertical;
+    min-height: 80px;
 }
 
 /* cabeçalho */
@@ -36,17 +44,103 @@ textarea {
     height: 160px;
     padding: 20px;
     background-color: #673ab7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .header h3 {
     color: #fff;
 }
 
-/* cabeçalho */
+/* form container */
 .form-container {
     background-color: #fdfdfd;
     width: 60%;
     margin: 0 auto;
     position: relative;
     top: -62px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+
+/* form header */
+.form-header {
+    border-bottom: 1px solid #dfdfdf;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-header p {
+    color: #673ab7;
+    border-bottom: 2px solid #673ab7;
+    text-transform: uppercase;
+    height: 45px;
+    line-height: 45px;
+    font-weight: bold;
+}
+
+/* form body */
+.form-body {
+    padding: 30px;
+}
+
+.form-title {
+    margin-bottom: 15px;
+}
+
+.form-body p {
+    margin-bottom: 20px;
+}
+
+.required-field {
+    color: red;
+}
+
+.box-input {
+    margin-bottom: 35px;
+}
+
+.block {
+    display: block;
+}
+
+/* Estilização dos opcionais */
+.opcionais {
+    margin-bottom: 20px;
+}
+
+.opcionais-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opcionais-box li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Botão de envio */
+.btn-submit {
+    background-color: #673ab7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #5a2ea7;
 }
